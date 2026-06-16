@@ -25,13 +25,11 @@ void downlink_hk_data(void) {
 
 void setup() {
   cdh.begin();
-  cdh.wait_for_serial();
-
   eps.init();
   eps.switch_3V3_on();
   sensor.begin();
 
-  com.begin(9600);
+  com.begin();
 
   cdh.println("XBee HK data downlink started (1 second interval)");
 }
