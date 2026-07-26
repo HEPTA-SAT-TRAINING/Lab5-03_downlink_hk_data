@@ -8,7 +8,7 @@ Open in **Chrome or Edge**, then **Add Port** → **Connect** (38400 baud):
 
 **https://hepta-sat-training.github.io/hepta-serial-viewer/**
 
-HK lines such as `TEMP=...,VBAT=...,V5=...` appear in the output pane every second. You can also send uplink commands from the input bar.
+HK lines such as `TEMP=...,BUS=...,V5=...` appear in the output pane every second. You can also send uplink commands from the input bar.
 
 ## Firmware
 

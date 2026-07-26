@@ -7,20 +7,21 @@ HeptaSensor sensor;
 
 void downlink_hk_data(void) {
   float temp = sensor.get_temperature();
-  float vbat = eps.get_battery_voltage();
+  float bus_voltage = eps.get_bus_voltage();
   float v5 = eps.get_5v_voltage();
   float v3v3 = eps.get_3v3_voltage();
   float sap = eps.get_sap_voltage();
-  float idis = eps.get_current_discharge();
+  float isol = eps.get_current_solar();
+  float ibus = eps.get_current_bus();
   float ichg = eps.get_current_charge();
 
   com.printf(
-    "TEMP=%.2f,VBAT=%.3f,V5=%.3f,V3V3=%.3f,SAP=%.3f,IDIS=%.3f,ICHG=%.3f\r\n",
-    temp, vbat, v5, v3v3, sap, idis, ichg);
+    "TEMP=%.2f,BUS=%.3f,V5=%.3f,V3V3=%.3f,SAP=%.3f,ISOL=%.3f,IBUS=%.3f,ICHG=%.3f\r\n",
+    temp, bus_voltage, v5, v3v3, sap, isol, ibus, ichg);
 
   cdh.printf(
-    "HK: TEMP=%.2f C, VBAT=%.3f V, V5=%.3f V, V3V3=%.3f V, SAP=%.3f V, IDIS=%.3f A, ICHG=%.3f A\r\n",
-    temp, vbat, v5, v3v3, sap, idis, ichg);
+    "HK: TEMP=%.2f C, BUS=%.3f V, V5=%.3f V, V3V3=%.3f V, SAP=%.3f V, ISOL=%.3f A, IBUS=%.3f A, ICHG=%.3f A\r\n",
+    temp, bus_voltage, v5, v3v3, sap, isol, ibus, ichg);
 }
 
 void setup() {
