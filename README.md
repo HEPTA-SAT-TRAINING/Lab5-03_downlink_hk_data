@@ -12,4 +12,4 @@ HK lines such as `TEMP=...,BUS=...,V5=...` appear in the output pane every secon
 
 ## Firmware
 
-Open `Lab5-03_downlink_hk_data.ino` in the Arduino IDE and upload to your board. For library and submodule setup, see [src/README.md](src/README.md).
+Open `Lab5-03_Downlink_HK_Data.ino` in the Arduino IDE and upload to your board. For library and submodule setup, see [src/README.md](src/README.md).
